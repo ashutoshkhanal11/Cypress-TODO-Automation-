@@ -42,7 +42,7 @@ describe('Verify the dashboard functionality',function()
 
     it('Verify if the checkbox is ticked from both sides',function()
     {
-       cy.checkbox(2)
+       cy.checkbox(3)
        cy.get('span[class="mat-checkbox-inner-container mat-checkbox-inner-container-no-side-margin"] input').eq(2).should('be.checked')
        cy.get('#mat-expansion-panel-header-91').click()
        cy.get('#cdk-accordion-child-91 > div > div').should('be.visible')
@@ -53,7 +53,7 @@ describe('Verify the dashboard functionality',function()
 
     it('Verify if we can delete the task from the system',function()
     {
-        cy.checkbox(2)
+        cy.checkbox(3)
         cy.contains('Delete Task').click()
     })
 
