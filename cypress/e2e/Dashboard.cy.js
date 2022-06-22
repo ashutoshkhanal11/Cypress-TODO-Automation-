@@ -16,60 +16,60 @@ describe('Verify the dashboard functionality',function()
         cy.url().should('include','/dashboard')
     })
 
-    // it('Verifying the dashboard navigation menu',function()
-    // {
-    //     cy.get(':nth-child(1) > .col').should('include.text','AK')
-    //     cy.get('h1[routerlink="/home"]').click()
-    //     cy.url().should('include','/home')
-    //     cy.go('back')//User should not go to the dashboard page
-    //     cy.url().should('include','/dashboard')//issue of the dashboard page.
-    //     cy.contains('Logout').click()
-    //     cy.url().should('include','/home')
-    //     cy.go('back')
-    //     cy.on('window:confirm',(data)=>
-    //     {
-    //       expect(data).to.include('Please Login to Continue')  
-    //     })
-    //     cy.url().should('include','/login')
-    // })
+    it('Verifying the dashboard navigation menu',function()
+    {
+        cy.get(':nth-child(1) > .col').should('include.text','AK')
+        cy.get('h1[routerlink="/home"]').click()
+        cy.url().should('include','/home')
+        cy.go('back')//User should not go to the dashboard page
+        cy.url().should('include','/dashboard')//issue of the dashboard page.
+        cy.contains('Logout').click()
+        cy.url().should('include','/home')
+        cy.go('back')
+        cy.on('window:confirm',(data)=>
+        {
+          expect(data).to.include('Please Login to Continue')  
+        })
+        cy.url().should('include','/login')
+    })
 
-    // it('Verifying the create new list form',function()
-    // {
-    //     cy.scrollTo('center')
-    //     cy.contains('Create new list').click()
-    //     cy.get('mat-dialog-container[role="dialog"]').should('be.visible')
-    //     cy.get('mat-dialog-container[role="dialog"]').contains('Create List')
-    //     cy.get('i[type="button"]').click()//click on the cross icon
-    //     cy.contains('Create new list').click()
-    //     cy.contains('Cancel').click()
+    it('Verifying the create new list form',function()
+    {
+        cy.scrollTo('center')
+        cy.contains('Create new list').click()
+        cy.get('mat-dialog-container[role="dialog"]').should('be.visible')
+        cy.get('mat-dialog-container[role="dialog"]').contains('Create List')
+        cy.get('i[type="button"]').click()//click on the cross icon
+        cy.contains('Create new list').click()
+        cy.contains('Cancel').click()
         
-    // })
+    })
 
-    // it("Verifying if we can create new list",function()
-    // {
-    //     cy.contains('Create new list').click()
-    //     cy.get('input[formcontrolname="list"]').type('Task Lists')
-    //     cy.contains('Add List').click()
-    // })
+    it("Verifying if we can create new list",function()
+    {
+        cy.contains('Create new list').click()
+        cy.get('input[formcontrolname="list"]').type('Task Lists')
+        cy.contains('Add List').click()
+    })
 
-    // it('Verifying the negative scanerio of create new list',function()
-    // {
-    //     cy.contains('Create new list').click()
-    //     cy.get('input[formcontrolname="list"]').type('Te')
-    //     cy.get('div[class="invalid-text ng-star-inserted"]').should('include.text','Required atleast 3 characters')
-    //     cy.contains('Add List').click()
+    it('Verifying the negative scanerio of create new list',function()
+    {
+        cy.contains('Create new list').click()
+        cy.get('input[formcontrolname="list"]').type('Te')
+        cy.get('div[class="invalid-text ng-star-inserted"]').should('include.text','Required atleast 3 characters')
+        cy.contains('Add List').click()
 
-    // })
+    })
 
-    // it('Verifying the add new task form',function()
-    // {
-    //     cy.contains('Create New Task').click()
-    //     cy.get('mat-dialog-container[role="dialog"]').contains('Create Task')
-    //     cy.get('i[type="button"]').click()//click on the cross icon
-    //     cy.contains('Create New Task').click()
-    //     cy.contains('Cancel').click()
+    it('Verifying the add new task form',function()
+    {
+        cy.contains('Create New Task').click()
+        cy.get('mat-dialog-container[role="dialog"]').contains('Create Task')
+        cy.get('i[type="button"]').click()//click on the cross icon
+        cy.contains('Create New Task').click()
+        cy.contains('Cancel').click()
 
-    // })
+    })
 
     it('Verifying if we can create new task',function()
     {
@@ -125,10 +125,10 @@ describe('Verify the dashboard functionality',function()
 
     })
 
-    // it('Verify if we can delete the task from the system',function()
-    // {
-    //     cy.checkbox(2)
-    //     cy.contains('Delete Task').click()
-    // })
+    it('Verify if we can delete the task from the system',function()
+    {
+        cy.checkbox(2)
+        cy.contains('Delete Task').click()
+    })
 
 })
