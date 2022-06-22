@@ -83,12 +83,12 @@ describe('Verify the dashboard functionality',function()
         
     })
 
-    // it('Verifying create new task with negative scanerio',function()
-    // {
-    //     cy.createtask('aa','Test Scanerio','Medium','2022-16-21T11:30')
-    //     cy.get('mat-error[class="mat-error ng-star-inserted"]').should('include.text','Task Name is invalid')
-    //     cy.get('input[placeholder="start date"]').should('have.text','')
-    // })
+    it('Verifying create new task with negative scanerio',function()
+    {
+        cy.createtask('aa','Test Scanerio','Medium','2022-16-21T11:30')
+        cy.get('mat-error[class="mat-error ng-star-inserted"]').should('include.text','Task Name is invalid')
+        cy.get('input[placeholder="start date"]').should('have.text','')
+    })
     
 
     it('Verifying if the task is added in task and in the list',function()
