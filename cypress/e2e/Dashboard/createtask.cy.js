@@ -30,6 +30,7 @@ describe('Verify the dashboard functionality',function()
     it('Verifying if we can create new task',function()
     {
         cy.createtask('Write Margin Trading','Task Lists','High','2022-06-23T11:30')
+        cy.wait(6000)
         
     })
 
